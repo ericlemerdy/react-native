@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
 
-class Menu extends Component {
+export class Menu extends Component {
     render() {
         const renderMenuItem = ({ item, index }) => {
             return (
@@ -11,6 +11,7 @@ class Menu extends Component {
                     title={item.name}
                     subtitle={item.description}
                     chevron={false}
+                    onPress={() => this.props.onPress(item.id)}
                     leftAvatar={{ source: require('./images/uthappizza.png') }}
                 />
             );
@@ -23,6 +24,4 @@ class Menu extends Component {
             />
         );
     }
-}
-
-export default Menu;
+};
